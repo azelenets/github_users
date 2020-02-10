@@ -1,0 +1,89 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+body {
+  background: url(https://github.githubassets.com/images/modules/site/heroes/simple-codelines.svg),#2b3137;
+  background-position: center 10%;
+  background-size: cover;
+  color: hsla(0,0%,100%,.6);
+}
+
+
+.site-header {
+  background-color: rgb(36, 41, 46);
+}
+
+.navbar-brand {
+  color: #ffffff;
+
+  .text {
+    margin-left: 5px;
+  }
+}
+
+.nav.navbar-nav {
+  .nav-link {
+    color: #ffffff;
+
+    &.user-logout {
+      color: #dc3545;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.user-logout {
+  color: #dc3545;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.jumbotron {
+  background: none;
+}
+
+
+// Footnotes.scss
+
+body {
+  counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+  color: #24B1E6;
+}
+
+// Sign In Form
+
+.form-signin {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+
+  .actions {
+    margin-bottom: 15px;
+
+    .send-instructions {
+      margin-top: 15px;
+    }
+  }
+}
+
+// Flashes
+
+.flashes {
+  margin-top: 15px;
+}

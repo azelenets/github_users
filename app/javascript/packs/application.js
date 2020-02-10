@@ -3,10 +3,28 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("@rails/activestorage").start();
+import $ from 'jquery';
+import 'bootstrap/dist/js/bootstrap';
 
+$(document).on('turbolinks:load', function() {
+  let body_element = $('body');
+
+  body_element.tooltip({
+    selector: '[data-toggle="tooltip"]',
+    container: 'body',
+    html:true
+  });
+
+  body_element.popover({
+    selector: '[data-toggle="popover"]',
+    container: 'body',
+    html: true,
+    trigger: 'hover',
+  });
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

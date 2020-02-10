@@ -1,0 +1,42 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-signin' }) do |f| %>
+  <%= render 'devise/shared/error_messages', resource: resource %>
+
+  <legend><%= t('devise.buttons.sign_up')%></legend>
+
+  <div class="form-label-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+    <small id="emailHelp" class="form-text text-muted">
+      We'll never share your email with anyone else.
+    </small>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
+    <small id="emailHelp" class="form-text text-muted">
+      Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter.
+    </small>
+  </div>
+
+  <div class="form-label-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="checkbox mb-3">
+      <%= f.label :remember_me do %>
+        <%= f.check_box :remember_me %> Remember Me
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit t('devise.buttons.sign_up'), class: 'btn btn-lg btn-success btn-block' %>
+  </div>
+
+  <%- if devise_mapping.registerable? %>
+    <%= link_to t('devise.buttons.sign_in'), new_session_path(resource_name), class: 'btn btn-outline-success btn-block' %>
+  <% end %>
+<% end %>
