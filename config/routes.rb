@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   authenticated :user do
     devise_scope :user do
-      root to: 'search_users#new', as: :authenticated_root
+      root to: "search_users#new", as: :authenticated_root
 
       resource :search_users, only: %i[show]
     end
   end
 
-  root to: 'home#index'
+  root to: "home#index"
 end

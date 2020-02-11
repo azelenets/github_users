@@ -1,0 +1,19 @@
+inherit_from:
+  - https://raw.githubusercontent.com/thoughtbot/guides/master/style/ruby/.rubocop.yml
+
+AllCops:
+  Exclude:
+    - node_modules/**/*
+    - db/schema.rb
+    - db/migrate/**/*
+    - bin/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/initializers/devise.rb
+    - config/environments/*
+
+Layout/LineLength:
+  Exclude:
+    - config/initializers/content_security_policy.rb
+    - config/environments/production.rb
