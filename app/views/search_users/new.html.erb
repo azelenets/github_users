@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="jumbotron">
+      <p>
+        When searching for users, you can get text match metadata for the issue
+        <strong>login</strong>, <strong>email</strong>, and <strong>name</strong>
+        fields.
+      </p>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <%= form_for(:github_user, url: search_users_url, method: :get, html: { class: 'form-signin' }) do |f| %>
+      <legend>Search GitHub users:</legend>
+
+      <div class="form-group">
+        <%= f.label(:q, 'Search query') %>
+        <%= f.text_field(:q, class: 'form-control') %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit('Search', class: 'btn btn-lg btn-success btn-block') %>
+      </div>
+    <% end %>
+  </div>
+</div>
